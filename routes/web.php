@@ -24,6 +24,12 @@ Route::middleware('auth')->group(function () {
         Route::get('/users', [UserController::class, 'index'])->name('users.index');
         Route::patch('/users/{user}/role', [UserController::class, 'updateRole'])->name('users.role');
     });
+
+    //Laporan
+
+Route::get('/reports', function () {
+    return view('reports.index');
+})->name('reports.index');
 });
 
 require __DIR__ . '/auth.php';
