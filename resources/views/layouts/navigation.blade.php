@@ -15,6 +15,14 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('items.index')" :active="request()->routeIs('items.*')">
+                        Data Barang
+                    </x-nav-link>
+                    @if (auth()->user()->role === 'admin')
+                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
+                        Kelola User
+                    </x-nav-link>
+                    @endif
                 </div>
             </div>
 
@@ -70,6 +78,15 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('items.index')" :active="request()->routeIs('items.*')">
+                Data Barang
+            </x-responsive-nav-link>
+            @if (auth()->user()->role === 'admin')
+            <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users.*')">
+                Kelola User
+            </x-responsive-nav-link>
+            @endif
+
         </div>
 
         <!-- Responsive Settings Options -->
