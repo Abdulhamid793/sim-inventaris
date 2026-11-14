@@ -23,6 +23,6 @@ class DatabaseSeeder extends Seeder
             'role' => 'staff', // Paket 2: 'author', Paket 3: 'anggota'
         ]);
 
-        // Seeder data dummy dipanggil di sini (ditambahkan di Paket masing-masing)
+        $this->call(ItemSeeder::class);
     }
 }
